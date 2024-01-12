@@ -132,6 +132,12 @@
 
 <h2>Exercice 7 : La table de multiplication</h2>
 <p>Ecrire le code afin de créser une table de multiplication</p>
+<%
+    for (int i = 1; i <= cpt; i++) {
+        out.println(cpt + " x " + i + " = " + (cpt * i) + "<br>");
+        out.println("<br>");
+    }
+%>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>5 x 1 = 5</p>
 <p>5 x 2 = 10</p>
