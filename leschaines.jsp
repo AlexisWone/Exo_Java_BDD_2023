@@ -61,10 +61,10 @@ r</p>
 <h2>Exercice 3 : Retour à la ligne</h2>
 <p>La présence d'un espace provoque un retour à la ligne </br>
 
-<% String[] UnMot = chaine.split(" ");
-   for (String mot : UnMot) { %>
-    <p><%= mot %></p>
-<% } %>
+    <% String[] UnMot = chaine.split(" ");
+       for (String mot : UnMot) { %>
+        <p><%= mot %></p>
+    <% } %>
 
 Exemple : L'hiver sera pluvieux</br>
 L'hiver</br>
@@ -73,15 +73,21 @@ pluvieux</p>
 
 <h2>Exercice 4 : Afficher une lettre sur deux</h2>
 <p>Ecrire le programme pour afficher seulement une lettre sur deux de votre texte </br>
-<% for (int i = 0; i < chaine.length(); i += 2) { %>
-    <%= chaine.charAt(i) %>
-<% } %>
-
+    <% for (int i = 0; i < chaine.length(); i += 2) { %>
+        <%= chaine.charAt(i) %>
+    <% } %>
+</br>
 Exemple : L'hiver sera pluvieux</br>
 Lhvrsr lvex</p>
 
 <h2>Exercice 5 : La phrase en verlant</h2>
 <p>Ecrire le programme afin d'afficher le texte en verlant </br>
+    <% String verlan = "";
+       for (int i = chaine.length() - 1; i >= 0; i--) {
+           verlan += chaine.charAt(i);
+       }
+    %>
+<p>texte en verlan : <%= verlan %></p>
 Exemple : L'hiver sera pluvieux</br>
 xueivulp ares revih'l</p>
 
