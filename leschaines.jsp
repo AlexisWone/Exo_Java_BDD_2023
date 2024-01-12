@@ -95,7 +95,7 @@ xueivulp ares revih'l</p>
 <p>Ecrire le programme afin de compter les consonnes et les voyelles dans votre texte</p>
 <% int countVoyelles = 0;
    int countConsonnes = 0;
-   String voyelles = "aeiouAEIOU";
+   String voyelles = "aeiouyAEIOUY";
 
    for (int i = 0; i < chaine.length(); i++) {
        char CurrentChar = chaine.charAt(i);
