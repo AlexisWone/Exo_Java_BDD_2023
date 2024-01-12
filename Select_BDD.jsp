@@ -76,7 +76,6 @@
     }
 %>
 
-%>
 <h2>Exercice 3 : Modification du titre du film</h2>
 <form action="#" method="post">
     <label for="idFilm">ID du film :</label>
