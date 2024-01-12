@@ -80,9 +80,9 @@ Oui C est compris entre A et B</p>
     <%-- Conversion de la valeur en entier --%>
     <% int intNombre = Integer.parseInt(nombreValue); %>
     <%if (intNombre % 2 == 0) {%>
-            <p>Le nombre N°4 est pair.</p>
+            <p>La 4eme valeur rentré est est pair.</p>
     <%} else {%>
-        <p>Le nombre N°4 est impair.</p>
+        <p>la 4eme valeur rentré est impair.</p>
     <%}%>
 <%}%>
 <% } %>
