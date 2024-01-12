@@ -23,9 +23,11 @@
     
 <h2>Exercice 1 : La carré de la première valeur</h2>
 <p>Ecrire un programme afin d'afficher le carré de la première valeur</p>
+<p>Le carré de la première valeur est égale à : <%= Math.pow(Integer.parseInt(tableauDeChiffres[0]), 2) %></p>
 
 <h2>Exercice 2 : La somme des 2 premières valeurs</h2>
 <p>Ecrire un programme afin d'afficher la somme des deux premières valeurs</p>
+<p>La somme des deux premières valeurs = <%= Integer.parseInt(tableauDeChiffres[0]) + Integer.parseInt(tableauDeChiffres[1]) %></p>
 
 <h2>Exercice 3 : La somme de toutes les valeurs</h2>
 <p>L'utilisateur peut à présent saisir autant de valeurs qu'il le souhaite dans champs de saisie.</br>
