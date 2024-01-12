@@ -52,6 +52,11 @@
 
 <h2>Exercice 2 : Année de recherche</h2>
 <p>Créer un champ de saisie permettant à l'utilisateur de choisir l'année de sa recherche.</p>
+<form action="#" method="post">
+    <label for="annee">Année de recherche :</label>
+    <input type="text" id="annee" name="annee">
+    <input type="submit" value="Rechercher">
+</form>
 <%
     String anneeRecherche = request.getParameter("annee");
     if (anneeRecherche != null && !anneeRecherche.isEmpty()) {
