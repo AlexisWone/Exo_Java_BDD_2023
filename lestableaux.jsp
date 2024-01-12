@@ -38,7 +38,7 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
       SommeChiffre += Integer.parseInt(tableauDeChiffres[i]);
    }
 %>
-<p>La somme des deux premières valeurs = <%= SommeChiffre %></p>
+<p>La somme des deux premières valeurs = <%= SommeChiffre %></p> 
 <h2>Exercice 4 : La valeur maximum</h2>
 <p>Ecrire un programme pour afficher la valeur maximale saisie par l'utilisateur</p>
 
