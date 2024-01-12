@@ -45,10 +45,11 @@
 
 <h2>Exercice 2 : Affichage verticale</h2>
 <p>Ecrire le programme pour afficher le texte en vertical</br>
-    <% for (int i = 0; i<chaine.length();i++){%>
-        <%= chaine.charAt(i)%>
-        <br>
-    <%}%>
+    <% 
+        for (int i = 0; i < chaine.length(); i++) { 
+            out.print(chaine.charAt(i));
+        } 
+    %>
 Exemple : Bonjour</br>
 B</br>
 o</br>
