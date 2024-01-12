@@ -99,9 +99,8 @@
 
 <h2>Exercice 6 : Le demi losange</h2>
 <p>Ecrire le code afin de produire un losange</p>
-<%
-    // Partie haute
     <%
+        // Partie haute
         for (int i = cpt; i > 0; i--) {
             for (int j = i; j > 0; j--) {
                 out.print("&nbsp;&nbsp;");
@@ -111,7 +110,6 @@
             }
             out.println("<br>");
         }
-    %>
 
     out.println("<br>");
 
