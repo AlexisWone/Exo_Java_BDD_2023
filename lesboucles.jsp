@@ -99,6 +99,34 @@
 
 <h2>Exercice 6 : Le demi losange</h2>
 <p>Ecrire le code afin de produire un losange</p>
+<%
+    // Partie haute
+    <%
+        for (int i = cpt; i > 0; i--) {
+            for (int j = i; j > 0; j--) {
+                out.print("&nbsp;&nbsp;");
+            }
+            for (int k = cpt-i+1; k > 0; k--) {
+                out.print("*");
+            }
+            out.println("<br>");
+        }
+    %>
+
+    out.println("<br>");
+
+    // Partie Basse
+    for (int i = cpt; i > 0; i--) {
+        
+        for (int j = i; j > 0; j--) {
+            out.print("&nbsp;&nbsp;");
+        }
+        for (int k = cpt; k > i; k--) {
+            out.print("*");
+        }
+        out.println("<br>");
+    }
+%>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;***</br>&nbsp;&nbsp;****</br>*****</p>
 <p>*****</br>&nbsp;&nbsp;****</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</p>
