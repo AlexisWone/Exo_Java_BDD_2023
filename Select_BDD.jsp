@@ -32,15 +32,12 @@
             //Exemple d'affichage de 2 colonnes
             out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "</br>");
         }
-        rs.close();
-        pstmt.close();
-        conn.close();
+        
     %>
 
 <h2>Exercice 1 : Les films entre 2000 et 2015</h2>
 <p>Extraire les films dont l'année est supérieur à l'année 2000 et inférieur à 2015.</p>
 <%
-        conn = DriverManager.getConnection(url, user, password);
         String sqlExercice1 = "SELECT idFilm, titre, année FROM Film WHERE année > 2000 AND année < 2015";
         pstmt = conn.prepareStatement(sqlExercice1);
         rs = pstmt.executeQuery();
@@ -51,77 +48,63 @@
             String colonne3 = rs.getString("année");
             out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "<br>");
         }
-    
-        rs.close();
-        pstmt.close();
-        conn.close();
     %>
 
 <h2>Exercice 2 : Année de recherche</h2>
 <p>Créer un champ de saisie permettant à l'utilisateur de choisir l'année de sa recherche.</p>
-<form action="#" method="post">
-    <p>Saisir une année : <input type="text" id="inputValeur" name="annee">
-    <p><input type="submit" value="Afficher">
-</form>
-
 <%
-    String annee = request.getParameter("annee");
+    String anneeRecherche = request.getParameter("annee");
+    if (anneeRecherche != null && !anneeRecherche.isEmpty()) {
+        String sqlExercice2 = "SELECT idFilm, titre, année FROM Film WHERE année = ?";
+        PreparedStatement pstmtExercice2 = conn.prepareStatement(sqlExercice2);
+        pstmtExercice2.setString(1, anneeRecherche);
+        ResultSet rsExercice2 = pstmtExercice2.executeQuery();
 
-    if (annee != null) { 
-        conn = DriverManager.getConnection(url, user, password);
-        String sqlExercice2 = "SELECT idFilm, titre, année FROM Film WHERE année = " + annee;
-        pstmt = conn.prepareStatement(sqlExercice2);
-        rs = pstmt.executeQuery();
-
-        while (rs.next()) {
-            String colonne1Annee = rs.getString("idFilm");
-            String colonne2Annee = rs.getString("titre");
-            String colonne3Annee = rs.getString("année");
-            out.println("id : " + colonne1Annee + ", titre : " + colonne2Annee + ", année : " + colonne3Annee + "</br>");
+        out.println("<h3>Résultats de la recherche pour l'année " + anneeRecherche + "</h3>");
+        while (rsExercice2.next()) {
+            out.println("id : " + rsExercice2.getString("idFilm") + ", titre : " + rsExercice2.getString("titre") +
+                    ", année : " + rsExercice2.getString("année") + "</br>");
         }
- 
-        rs.close();
-        pstmt.close();
-        conn.close();
+
+        rsExercice2.close();
+        pstmtExercice2.close();
     }
+%>
 
 %>
 <h2>Exercice 3 : Modification du titre du film</h2>
-<p>Créer un fichier permettant de modifier le titre d'un film sur la base de son ID (ID choisi par l'utilisateur)</p>
-    <form action="#" method="post">
-        <label for="filmId">ID du film :</label>
-        <input type="text" id="filmId" name="filmId">
-        <label for="newTitle">Nouveau titre :</label>
-        <input type="text" id="newTitle" name="newTitle">
-        <input type="submit" value="Modifier">
-    </form>
+<form action="#" method="post">
+    <label for="idFilm">ID du film :</label>
+    <input type="text" id="idFilm" name="idFilm">
+    <label for="nouveauTitre">Nouveau titre :</label>
+    <input type="text" id="nouveauTitre" name="nouveauTitre">
+    <input type="submit" value="Modifier">
+</form>
 
-    <%
-        String filmId = request.getParameter("filmId");
-        String newTitle = request.getParameter("newTitle");
+<%
+    // Traitement de la modification du titre du film
+    String idFilmAModifier = request.getParameter("idFilm");
+    String nouveauTitre = request.getParameter("nouveauTitre");
+    if (idFilmAModifier != null && !idFilmAModifier.isEmpty() && nouveauTitre != null && !nouveauTitre.isEmpty()) {
+        String sqlExercice3 = "UPDATE Film SET titre = ? WHERE idFilm = ?";
+        PreparedStatement pstmtExercice3 = conn.prepareStatement(sqlExercice3);
+        pstmtExercice3.setString(1, nouveauTitre);
+        pstmtExercice3.setString(2, idFilmAModifier);
+        int rowsUpdated = pstmtExercice3.executeUpdate();
 
-        if (filmId != null && newTitle != null) {
-            conn = DriverManager.getConnection(url, user, password);
-            int idToUpdate = Integer.parseInt(filmId);
-            String updateSQL = "UPDATE Film SET titre = ? WHERE idFilm = ?";
-            PreparedStatement updateStmt = conn.prepareStatement(updateSQL);
-            updateStmt.setString(1, newTitle);
-            updateStmt.setInt(2, idToUpdate);
-
-            int rowsUpdated = updateStmt.executeUpdate();
-
-            if (rowsUpdated > 0) {
-                out.println("<p>Modification réussie pour le film avec l'ID " + idToUpdate + ". Son nouveau titre est : "+newTitle + ".</p>");
-            } else {
-                out.println("<p>Erreur aucune modification effectuée.</p>");
-            }
-
-            updateStmt.close();
-        }
-    %>
+        out.println("<h3>Résultat de la modification du titre</h3>");
+        out.println(rowsUpdated + " ligne(s) mise(s) à jour");
+        pstmtExercice3.close();
+    }
+%>
 
 <h2>Exercice 4 : La valeur maximum</h2>
 <p>Créer un formulaire pour saisir un nouveau film dans la base de données</p>
-    
+    <%
+        rs.close();
+        pstmt.close();
+        conn.close();
+
+%>
 </body>
 </html>
