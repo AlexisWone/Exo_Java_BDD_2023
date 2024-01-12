@@ -70,7 +70,7 @@
 <%
     for (int i = cpt; i > 0; i--) {
         for (int j = i; j > 0; j--) {
-            out.print("&nbsp;");
+            out.print("&nbsp;&nbsp;");
         }
         for (int k = cpt-i+1; k > 0; k--) {
             out.print("*");
