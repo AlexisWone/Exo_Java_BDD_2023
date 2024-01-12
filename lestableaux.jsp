@@ -41,9 +41,29 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
 <p>La somme des deux premières valeurs = <%= SommeChiffre %></p> 
 <h2>Exercice 4 : La valeur maximum</h2>
 <p>Ecrire un programme pour afficher la valeur maximale saisie par l'utilisateur</p>
+<%
+   int max = Integer.parseInt(tableauDeChiffres[0];
+   for (int i=0; i<tableauDeChiffres.length; i++) {
+      int valeur = Integer.parseInt(tableauDeChiffres[i];
+      if (valeur > max) {
+         max = valeur;
+      }
+   }
+%>
+<p>La valeur max est : <%= max %></p> 
 
 <h2>Exercice 5 : La valeur minimale</h2>
 <p>Ecrire un programme pour afficher la valeur minimale saisie par l'utilisateur</p>
+<%
+   int min = Integer.parseInt(tableauDeChiffres[0];
+   for (int i=0; i<tableauDeChiffres.length; i++) {
+      int valeur = Integer.parseInt(tableauDeChiffres[i];
+      if (valeur < min) {
+         min = valeur;
+      }
+   }
+%>
+<p>La valeur max est : <%= min %></p> 
 
 <h2>Exercice 6 : La valeur le plus proche de 0</h2>
 <p>Trouvez la valeur la plus proche de 0 (chiffres positifs ou négatifs)</p>
