@@ -67,6 +67,17 @@
 
 <h2>Exercice 4 : Triangle rectangle 2</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
+<%
+    for (int i = cpt; i > 0; i--) {
+        for (int j = i; j > 0; j--) {
+            out.print("&nbsp;");
+        }
+        for (int k = cpt-i+1; k > 0; k--) {
+            out.print("*");
+        }
+        out.println("<br>");
+    }
+%>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;***</br>&nbsp;&nbsp;****</br>*****</p>
 
