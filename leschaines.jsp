@@ -59,6 +59,12 @@ r</p>
 
 <h2>Exercice 3 : Retour à la ligne</h2>
 <p>La présence d'un espace provoque un retour à la ligne </br>
+
+<% String[] UnMot = chaine.split(" ");
+   for (String mot : UnMot) { %>
+    <p><%= mot %></p>
+<% } %>
+
 Exemple : L'hiver sera pluvieux</br>
 L'hiver</br>
 sera</br>
