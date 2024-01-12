@@ -32,21 +32,46 @@
             //Exemple d'affichage de 2 colonnes
             out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "</br>");
         }
-        
+        rs.close();
+        pstmt.close();
+        conn.close();
     %>
 
 <h2>Exercice 1 : Les films entre 2000 et 2015</h2>
 <p>Extraire les films dont l'année est supérieur à l'année 2000 et inférieur à 2015.</p>
-
 <%
-    sql = "SELECT idFilm, titre, année FROM Film WHERE année >= 2000 AND année <= 2014";
-    pstmt = conn.prepareStatement(sql);
+        conn = DriverManager.getConnection(url, user, password);
+        String sqlExercice1 = "SELECT idFilm, titre, année FROM Film WHERE année > 2000 AND année < 2015";
+        pstmt = conn.prepareStatement(sqlExercice1);
+        rs = pstmt.executeQuery();
+    
+        while (rs.next()) {
+            String colonne1 = rs.getString("idFilm");
+            String colonne2 = rs.getString("titre");
+            String colonne3 = rs.getString("année");
+            out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "<br>");
+        }
+    
+        rs.close();
+        pstmt.close();
+        conn.close();
+    %>
+<%
+    conn = DriverManager.getConnection(url, user, password);
+    String sqlExercice1 = "SELECT idFilm, titre, année FROM Film WHERE année > 2000 AND année < 2015";
+    pstmt = conn.prepareStatement(sqlExercice1);
     rs = pstmt.executeQuery();
 
     while (rs.next()) {
-        out.println("id : " + rs.getString("idFilm") + ", titre : " + rs.getString("titre") +
-                ", année : " + rs.getString("année") + "</br>");
+        String colonne1 = rs.getString("idFilm");
+        String colonne2 = rs.getString("titre");
+        String colonne3 = rs.getString("année");
+        out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "<br>");
     }
+
+    rs.close();
+    pstmt.close();
+    conn.close();
 %>
 
 <h2>Exercice 2 : Année de recherche</h2>
