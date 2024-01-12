@@ -83,9 +83,8 @@
 
 <h2>Exercice 5 : Triangle isocele</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
-
 <%
-    for (int i = cpt; i 0; i--) {
+    for (int i = cpt; i>0; i--) {
         for (int j = i; j > 0; j--) {
             out.print("&nbsp;");
         }
