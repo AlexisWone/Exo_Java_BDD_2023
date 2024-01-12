@@ -32,11 +32,7 @@
             //Exemple d'affichage de 2 colonnes
             out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "</br>");
         }
-
-        // Fermer les ressources 
-        rs.close();
-        pstmt.close();
-        conn.close();
+        
     %>
 
 <h2>Exercice 1 : Les films entre 2000 et 2015</h2>
@@ -61,6 +57,6 @@
 
 <h2>Exercice 4 : La valeur maximum</h2>
 <p>Créer un formulaire pour saisir un nouveau film dans la base de données</p>
-
+    
 </body>
 </html>
