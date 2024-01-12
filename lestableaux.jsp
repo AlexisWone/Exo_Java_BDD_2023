@@ -42,9 +42,9 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
 <h2>Exercice 4 : La valeur maximum</h2>
 <p>Ecrire un programme pour afficher la valeur maximale saisie par l'utilisateur</p>
 <%
-   int max = Integer.parseInt(tableauDeChiffres[0];
+   int max = Integer.parseInt(tableauDeChiffres[0]);
    for (int i=0; i<tableauDeChiffres.length; i++) {
-      int valeur = Integer.parseInt(tableauDeChiffres[i];
+      int valeur = Integer.parseInt(tableauDeChiffres[i]);
       if (valeur > max) {
          max = valeur;
       }
@@ -55,9 +55,9 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
 <h2>Exercice 5 : La valeur minimale</h2>
 <p>Ecrire un programme pour afficher la valeur minimale saisie par l'utilisateur</p>
 <%
-   int min = Integer.parseInt(tableauDeChiffres[0];
+   int min = Integer.parseInt(tableauDeChiffres[0]);
    for (int i=0; i<tableauDeChiffres.length; i++) {
-      int valeur = Integer.parseInt(tableauDeChiffres[i];
+      int valeur = Integer.parseInt(tableauDeChiffres[i]);
       if (valeur < min) {
          min = valeur;
       }
