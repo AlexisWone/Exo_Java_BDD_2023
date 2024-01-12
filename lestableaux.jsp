@@ -34,8 +34,8 @@
 Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'utilisateur</p>
 <%
    int SommeChiffre = 0;
-   for (String chiffre : tableauDeChiffres) {
-      SommeChiffre += Integer.parseInt(chiffre);
+   for (i=0; i<tableauDeChiffres.length; i++) {
+      SommeChiffre += Integer.parseInt(tableauDeChiffres[i]);
    }
     <p>La somme de toutes les valeurs est : <%= SommeChiffre %></p>
 %>
