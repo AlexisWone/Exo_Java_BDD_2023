@@ -71,7 +71,7 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
        int ProcheDeZero = Integer.parseInt(tableauDeChiffres[0]);
        for (int i=0; i<tableauDeChiffres.length; i++) {
           int valeur = Integer.parseInt(tableauDeChiffres[i]);
-          if (Math.abs(valeur) < Math.abs(plusProcheDeZero)) {
+          if (Math.abs(valeur) < Math.abs(ProcheDeZero)) {
              ProcheDeZero = valeur;
           }
        }
