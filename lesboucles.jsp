@@ -27,8 +27,8 @@
 
 <h2>Exercice 1 : Le carré d'étoiles</h2>
 <p>Ecrire le code afin de produire un carré d'étoile</p>
+<p>Code pour le carré d'étoile</p>
         <%
-            // Boucle for pour générer le carré d'étoiles
             for (int i = 0; i < cpt; i++) {
                 for (int j = 0; j < cpt; j++) {
                     out.print("*");
@@ -41,6 +41,14 @@
 
 <h2>Exercice 2 : Triangle rectangle gauche</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
+<%
+    for (int i = 1; i <= cpt; i++) {
+        for (int j = 1; j <= i; j++) {
+            out.print("*");
+        }
+        out.println("<br>");
+    }
+%>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>*</br>**</br>***</br>****</br>*****</p>
 
