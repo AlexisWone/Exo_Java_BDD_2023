@@ -27,6 +27,15 @@
 
 <h2>Exercice 1 : Le carré d'étoiles</h2>
 <p>Ecrire le code afin de produire un carré d'étoile</p>
+        <%
+            // Boucle for pour générer le carré d'étoiles
+            for (int i = 0; i < cpt; i++) {
+                for (int j = 0; j < cpt; j++) {
+                    out.print("*");
+                }
+                out.println("<br>");
+            }
+        %>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>*****</br>*****</br>*****</br>*****</br>*****</p>
 
