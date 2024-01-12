@@ -68,11 +68,11 @@
 <h2>Exercice 4 : Triangle rectangle 2</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
 <%
-    for (int i = cpt; i > 0; i--) {
-        for (int j = i; j > 0; j--) {
+    for (int i = 1; i <= cpt; i++) {
+        for (int j = 1; j <= cpt - i; j++) {
             out.print("&nbsp;&nbsp;");
         }
-        for (int k = cpt-i+1; k > 0; k--) {
+        for (int k = 1; k <= i; k++) {
             out.print("*");
         }
         out.println("<br>");
@@ -84,11 +84,11 @@
 <h2>Exercice 5 : Triangle isocele</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
 <%
-    for (int i = cpt; i>0; i--) {
-        for (int j = i; j > 0; j--) {
+    for (int i = 1; i <= cpt; i++) {
+        for (int j = 1; j <= cpt - i; j++) {
             out.print("&nbsp;");
         }
-        for (int k = cpt-i+1; k > 0; k--) {
+        for (int k = 1; k <= i; k++) {
             out.print("*");
         }
         out.println("<br>");
@@ -100,12 +100,12 @@
 <h2>Exercice 6 : Le demi losange</h2>
 <p>Ecrire le code afin de produire un losange</p>
     <%
-        // Partie Haut
-        for (int i = cpt; i > 0; i--) {
-            for (int j = i; j > 0; j--) {
+        // Partie haute
+        for (int i = 1; i <= cpt; i++) {
+            for (int j = 1; j <= cpt - i; j++) {
                 out.print("&nbsp;&nbsp;");
             }
-            for (int k = cpt-i+1; k > 0; k--) {
+            for (int k = 1; k <= i; k++) {
                 out.print("*");
             }
             out.println("<br>");
@@ -113,13 +113,11 @@
     
         out.println("<br>");
     
-        // Partie Basse
+        // Partie basse
         for (int i = 1; i <= cpt; i++) {
-            // Ajoutez des espaces pour aligner le losange à droite
             for (int j = 1; j <= i - 1; j++) {
                 out.print("&nbsp;&nbsp;");
             }
-            // Ajoutez les étoiles
             for (int k = i; k <= cpt; k++) {
                 out.print("*");
             }
