@@ -90,7 +90,7 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
           }
        }
     %>
-<p>La valeur la plus proche de 0 (2° version) est : <%= ProcheDeZero %></p>
+<p>La valeur la plus proche de 0 (2° version) est : <%= ProcheDeZero2 %></p>
 <% } %>
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
