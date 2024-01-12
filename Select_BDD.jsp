@@ -56,23 +56,6 @@
         pstmt.close();
         conn.close();
     %>
-<%
-    conn = DriverManager.getConnection(url, user, password);
-    String sqlExercice1 = "SELECT idFilm, titre, année FROM Film WHERE année > 2000 AND année < 2015";
-    pstmt = conn.prepareStatement(sqlExercice1);
-    rs = pstmt.executeQuery();
-
-    while (rs.next()) {
-        String colonne1 = rs.getString("idFilm");
-        String colonne2 = rs.getString("titre");
-        String colonne3 = rs.getString("année");
-        out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "<br>");
-    }
-
-    rs.close();
-    pstmt.close();
-    conn.close();
-%>
 
 <h2>Exercice 2 : Année de recherche</h2>
 <p>Créer un champ de saisie permettant à l'utilisateur de choisir l'année de sa recherche.</p>
@@ -86,8 +69,8 @@
 
     if (annee != null) { 
         conn = DriverManager.getConnection(url, user, password);
-        String sqlExercice1 = "SELECT idFilm, titre, année FROM Film WHERE année = " + annee;
-        pstmt = conn.prepareStatement(sqlExercice1);
+        String sqlExercice2 = "SELECT idFilm, titre, année FROM Film WHERE année = " + annee;
+        pstmt = conn.prepareStatement(sqlExercice2);
         rs = pstmt.executeQuery();
 
         while (rs.next()) {
