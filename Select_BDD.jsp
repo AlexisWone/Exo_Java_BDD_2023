@@ -77,6 +77,7 @@
 %>
 
 <h2>Exercice 3 : Modification du titre du film</h2>
+<p>Créer un formulaire permettant de modifier le titre d'un film sur la base de son ID (ID choisi par l'utilisateur)</p>
 <form action="#" method="post">
     <label for="idFilm">ID du film :</label>
     <input type="text" id="idFilm" name="idFilm">
@@ -97,7 +98,7 @@
         int rowsUpdated = pstmtExercice3.executeUpdate();
 
         out.println("<h3>Résultat de la modification du titre</h3>");
-        out.println(rowsUpdated + " ligne(s) mise(s) à jour");
+        out.println(rowsUpdated + " la ligne(s) à était mise(s) à jour");
         pstmtExercice3.close();
     }
 %>
