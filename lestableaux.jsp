@@ -18,7 +18,7 @@
     <% String[] tableauDeChiffres = chaine.split("\\s+"); %>
     <p>La tableau contient <%= tableauDeChiffres.length %> valeurs</br>
    <%for (int i=0; i<tableauDeChiffres.length; i++) {%>
-          <p>Chiffre <%=i%> : <%= Integer.parseInt(tableauDeChiffres[i]) %>/p>
+          <p>Chiffre <%=i%> : <%= Integer.parseInt(tableauDeChiffres[i]) %></p>
     <%}%>
     
 <h2>Exercice 1 : La carré de la première valeur</h2>
