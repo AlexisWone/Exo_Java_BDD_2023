@@ -72,11 +72,8 @@ pluvieux</p>
 
 <h2>Exercice 4 : Afficher une lettre sur deux</h2>
 <p>Ecrire le programme pour afficher seulement une lettre sur deux de votre texte </br>
-<% String Phrase = "";%>
 <% for (int i = 0; i < chaine.length(); i += 2) { %>
-    <% String lettre = chaine.charAt(i);%>
-    <% Phrase = Phrase + lettre ;%>
-    <p><%= Phrase%></p>
+    <p><%= chaine.charAt(i) %></p>
 <% } %>
 
 Exemple : L'hiver sera pluvieux</br>
